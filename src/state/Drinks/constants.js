@@ -1,0 +1,3 @@
+export const GET_DRINKS_REQUEST = 'Drinks/GET_DRINKS_REQUEST'
+export const GET_DRINKS_SUCCESS = 'Drinks/GET_DRINKS_SUCCESS'
+export const GET_DRINKS_ERROR = 'Drinks/GET_DRINKS_ERROR'
