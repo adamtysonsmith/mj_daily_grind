@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from './Button'
-import { H1 } from './typography'
+import { H2 } from './typography'
 
 import coffeeCup from '../images/coffee-cup-outline.png'
 import coffeePot from '../images/coffee-jar-of-rounded-shape.png'
@@ -56,7 +56,7 @@ const Drink = (props) =>
 
 export default (props) =>
   <div>
-    <H1>What Kind of Drink?</H1>
+    <H2>What Kind of Drink?</H2>
     <div style={{ marginBottom: '40px' }}>
       {
         props.Drinks.length &&

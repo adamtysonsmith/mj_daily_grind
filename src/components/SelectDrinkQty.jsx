@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import '!style-loader!css-loader!react-input-range/lib/css/index.css'
 import InputRange from 'react-input-range'
-import { H1 } from './typography'
+import { H2 } from './typography'
 import Button from './Button'
 
 const InputContainer = styled.div`
@@ -29,7 +29,7 @@ const Drinks = styled.p`
 
 export default (props) =>
   <div>
-    <H1>How Many Have You Had?</H1>
+    <H2>How Many Have You Had?</H2>
     <Qty>{props.NewDrinkQty}</Qty>
     <Drinks>
       { props.NewDrinkQty <= 1 ?' Drink' : 'Drinks' }
