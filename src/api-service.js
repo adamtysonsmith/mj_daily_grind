@@ -7,4 +7,6 @@ const makeRequest = (request) => request
 
 export default {
   getDrinks: () => makeRequest(axios.get(`${API_URL}/drinks`)),
+  getDrinksConsumed: () => makeRequest(axios.get(`${API_URL}/drinks-consumed`)),
+  postDrinkConsumed: (newDrink) => makeRequest(axios.post(`${API_URL}/drinks-consumed`, newDrink)),
 }

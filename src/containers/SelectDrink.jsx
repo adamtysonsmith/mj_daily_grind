@@ -4,16 +4,17 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { withRouter } from 'react-router-dom'
 import { createStructuredSelector } from 'reselect'
+
 import { makeSelectDrinks } from '../state/Drinks/selectors'
-import { getDrinks } from '../state/Drinks/actions'
+import { makeSelectNewDrinkId } from '../state/NewDrink/selectors'
+import { setNewDrink } from '../state/NewDrink/actions'
+
 import Navigation from './Navigation'
-import Dashboard from '../components/Dashboard'
-import { getDrinksConsumed } from '../state/DrinksConsumed/actions';
-import { makeSelectTotalMgConsumedToday } from '../state/DrinksConsumed/selectors'
+import SelectDrink from '../components/SelectDrink'
 
 const mapStateToProps = createStructuredSelector({
   Drinks: makeSelectDrinks(),
-  MgConsumedToday: makeSelectTotalMgConsumedToday(),
+  NewDrinkId: makeSelectNewDrinkId(),
 })
 
 const connector = compose(Navigation, connect(mapStateToProps))
@@ -22,20 +23,18 @@ export default connector(class extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func,
     Drinks: PropTypes.array,
-    MgConsumedToday: PropTypes.number,
-    goToSelectNewDrink: PropTypes.func,
+    NewDrinkId: PropTypes.number,
+    goToSelectNewDrinkQty: PropTypes.func,
   }
 
-  componentDidMount() {
-    if (!this.props.Drinks.length) this.props.dispatch(getDrinks())
-    this.props.dispatch(getDrinksConsumed())
-  }
+  selectDrink = (drinkId) => () => this.props.dispatch(setNewDrink(drinkId))
 
   render() {
     const props = {
       ...this.props,
+      selectDrink: this.selectDrink,
     }
 
-    return <Dashboard {...props} />
+    return <SelectDrink {...props} />
   }
 })

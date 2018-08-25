@@ -6,7 +6,6 @@ import { getDrinksSuccess, getDrinksError } from '../state/Drinks/actions'
 
 function* getDrinks(action) {
   const response = yield call(ApiService.getDrinks)
-  console.log('the response', response)
   if (response && response.error) yield put(getDrinksError(response.error))
   else yield put(getDrinksSuccess(response))
 }
