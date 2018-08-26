@@ -2,9 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const A = styled.a`
+const StyledButton = styled.button`
+  width: 100%;
   padding: 20px 40px;
   border-radius: 5px;
+  font-family: Roboto;
+  font-size: 16px;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
@@ -18,9 +21,9 @@ const A = styled.a`
 `
 
 const Button = (props) =>
-  <A onClick={props.disabled ? () => {} : props.onClick} disabled={props.disabled}>
+  <StyledButton onClick={props.disabled ? () => {} : props.onClick} disabled={props.disabled}>
     {props.label}
-  </A>
+  </StyledButton>
 
 export default Button
 

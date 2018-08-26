@@ -6,4 +6,5 @@ export default styled.div`
   max-width: 320px;
   text-align: center;
   font-family: Roboto;
+  margin-bottom: 60px;
 `
