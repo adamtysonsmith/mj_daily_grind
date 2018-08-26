@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable'
-import createReducer from '../createReducer'
+import { createReducer } from '../utils'
 
 import {
   GET_DRINKS_CONSUMED_REQUEST,

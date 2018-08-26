@@ -1,5 +1,5 @@
 import { fromJS, Record } from 'immutable'
-import createReducer from '../createReducer'
+import { createReducer } from '../utils'
 
 import {
   SET_NEW_DRINK,

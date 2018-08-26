@@ -4,9 +4,8 @@ import {
   GET_DRINKS_CONSUMED_ERROR,
 } from './constants'
 
-export const getDrinksConsumed = (date) => ({
+export const getDrinksConsumed = () => ({
   type: GET_DRINKS_CONSUMED_REQUEST,
-  payload: date,
 })
 
 export const getDrinksConsumedSuccess = (drinksConsumed) => ({

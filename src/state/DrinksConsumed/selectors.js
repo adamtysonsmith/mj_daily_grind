@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect'
 import moment from 'moment'
-import { identity } from '../../utils'
+import { stateToJS } from '../utils'
 
 const selectDrinksConsumed = (state) => state.getIn(['DrinksConsumed', 'drinksConsumed'])
 
@@ -22,6 +22,6 @@ const selectTotalMgConsumedToday = (state) => {
     }, 0)
 }
 
-export const makeSelectDrinksConsumed = () => createSelector(selectDrinksConsumed, identity)
-export const makeSelectTotalMgConsumedToday = () => createSelector(selectTotalMgConsumedToday, identity)
+export const makeSelectDrinksConsumed = () => createSelector(selectDrinksConsumed, stateToJS)
+export const makeSelectTotalMgConsumedToday = () => createSelector(selectTotalMgConsumedToday, stateToJS)
 

@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect'
-import { identity } from '../../utils'
+import { stateToJS } from '../utils'
 
 const selectDrinks = (state) => state.getIn(['Drinks', 'drinks'])
 
-export const makeSelectDrinks = () => createSelector(selectDrinks, identity)
+export const makeSelectDrinks = () => createSelector(selectDrinks, stateToJS)
