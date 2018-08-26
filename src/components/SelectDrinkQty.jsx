@@ -41,7 +41,7 @@ const SelectDrinkQty = (props) =>
     <InputContainer>
       <InputRange
         minValue={0}
-        maxValue={5}
+        maxValue={3}
         step={0.5}
         value={props.NewDrinkQty}
         onChange={props.onSliderChange}
