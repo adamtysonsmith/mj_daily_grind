@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import '!style-loader!css-loader!react-input-range/lib/css/index.css'
 import InputRange from 'react-input-range'
@@ -27,12 +28,12 @@ const Drinks = styled.p`
   font-size: 20px;
 `
 
-export default (props) =>
+const SelectDrinkQty = (props) =>
   <div>
     <H2>How Many Have You Had?</H2>
     <Qty>{props.NewDrinkQty}</Qty>
     <Drinks>
-      { props.NewDrinkQty <= 1 ?' Drink' : 'Drinks' }
+      { props.NewDrinkQty <= 1 ? 'Drink' : 'Drinks' }
     </Drinks>
 
     <InputContainer>
@@ -45,7 +46,17 @@ export default (props) =>
       />
     </InputContainer>
 
-    <Button onClick={props.submit} disabled={!props.NewDrinkQty}>
-      Submit
-    </Button>
+    <Button
+      onClick={props.submit}
+      disabled={!props.NewDrinkQty}
+      label="Submit"
+    />
   </div>
+
+export default SelectDrinkQty
+
+SelectDrinkQty.propTypes = {
+  NewDrinkQty: PropTypes.number.isRequired,
+  onSliderChange: PropTypes.func.isRequired,
+  submit: PropTypes.func.isRequired,
+}

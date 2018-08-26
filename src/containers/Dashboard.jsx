@@ -6,10 +6,10 @@ import { withRouter } from 'react-router-dom'
 import { createStructuredSelector } from 'reselect'
 import { makeSelectDrinks } from '../state/Drinks/selectors'
 import { getDrinks } from '../state/Drinks/actions'
-import Navigation from './Navigation'
-import Dashboard from '../components/Dashboard'
 import { getDrinksConsumed } from '../state/DrinksConsumed/actions';
 import { makeSelectTotalMgConsumedToday } from '../state/DrinksConsumed/selectors'
+import Navigation from './Navigation'
+import Dashboard from '../components/Dashboard'
 
 const mapStateToProps = createStructuredSelector({
   Drinks: makeSelectDrinks(),

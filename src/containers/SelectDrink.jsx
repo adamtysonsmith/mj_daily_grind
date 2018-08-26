@@ -2,13 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
-import { withRouter } from 'react-router-dom'
 import { createStructuredSelector } from 'reselect'
-
 import { makeSelectDrinks } from '../state/Drinks/selectors'
 import { makeSelectNewDrinkId } from '../state/NewDrink/selectors'
 import { setNewDrink } from '../state/NewDrink/actions'
-
 import Navigation from './Navigation'
 import SelectDrink from '../components/SelectDrink'
 

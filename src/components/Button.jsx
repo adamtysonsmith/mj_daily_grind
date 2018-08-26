@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const Button = styled.a`
+const A = styled.a`
   padding: 20px 40px;
   border-radius: 5px;
   font-weight: bold;
@@ -16,7 +17,15 @@ const Button = styled.a`
   }
 `
 
-export default (props) =>
-  <Button onClick={props.disabled ? () => {} : props.onClick} disabled={props.disabled}>
-    {props.children}
-  </Button>
+const Button = (props) =>
+  <A onClick={props.disabled ? () => {} : props.onClick} disabled={props.disabled}>
+    {props.label}
+  </A>
+
+export default Button
+
+Button.propTypes = {
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+}

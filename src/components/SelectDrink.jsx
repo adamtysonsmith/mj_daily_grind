@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Button from './Button'
 import { H2 } from './typography'
@@ -54,7 +55,7 @@ const Drink = (props) =>
     <p>{props.drink.servings_per_drink} servings</p>
   </DrinkContainer>
 
-export default (props) =>
+const SelectDrink = (props) =>
   <div>
     <H2>What Kind of Drink?</H2>
     <div style={{ marginBottom: '40px' }}>
@@ -63,7 +64,22 @@ export default (props) =>
         props.Drinks.map((drink, i) => <Drink key={i} drink={drink} {...props} />)
       }
     </div>
-    <Button onClick={props.goToSelectNewDrinkQty} disabled={!props.NewDrinkId}>
-      Next
-    </Button>
+    <Button
+      onClick={props.goToSelectNewDrinkQty}
+      disabled={!props.NewDrinkId}
+      label="Next"
+    />
   </div>
+
+export default SelectDrink
+
+SelectDrink.propTypes = {
+  Drinks: PropTypes.array.isRequired,
+  NewDrinkId: PropTypes.number.isRequired,
+  goToSelectNewDrinkQty: PropTypes.func.isRequired,
+}
+
+Drink.propTypes = {
+  drink: PropTypes.object.isRequired,
+  NewDrinkId: PropTypes.number.isRequired,
+}

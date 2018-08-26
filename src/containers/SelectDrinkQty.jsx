@@ -2,12 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
-import { withRouter } from 'react-router-dom'
 import { createStructuredSelector } from 'reselect'
-
 import { makeSelectNewDrinkQty, makeSelectNewDrink } from '../state/NewDrink/selectors'
 import { setNewDrinkQty, newDrinkConsumed } from '../state/NewDrink/actions'
-
 import Navigation from './Navigation'
 import SelectDrinkQty from '../components/SelectDrinkQty'
 
@@ -21,6 +18,7 @@ const connector = compose(Navigation, connect(mapStateToProps))
 export default connector(class extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func,
+    NewDrink: PropTypes.object,
     NewDrinkQty: PropTypes.number,
     goToDashboard: PropTypes.func,
   }

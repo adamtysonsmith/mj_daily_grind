@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { compose } from 'redux'
 import { withRouter } from 'react-router-dom'
 
 const HOC = (Component) => withRouter(class extends React.Component {
+  static propTypes = {
+    history: PropTypes.array,
+  }
+
   goToDashboard = () => {
     this.props.history.push('/')
   }
