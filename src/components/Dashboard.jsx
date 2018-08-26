@@ -47,6 +47,8 @@ const EmojiMessage = (props) => {
     margin-bottom: 60px;
   `
 
+  if (props.mgConsumedToday === 0) return null
+
   if (props.mgConsumedToday <= safeThreshold) {
     return <P><Emoji>✅</Emoji> You are operating at a safe level.</P>
   }
