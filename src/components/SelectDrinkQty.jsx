@@ -7,6 +7,8 @@ import { H2 } from './typography'
 import Button from './Button'
 
 const InputContainer = styled.div`
+  width: 80%;
+  margin: 0 auto;
   margin-bottom: 80px;
   .input-range__track--active,
   .input-range__slider {

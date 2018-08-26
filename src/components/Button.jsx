@@ -6,6 +6,7 @@ const StyledButton = styled.button`
   width: 100%;
   padding: 20px 40px;
   border-radius: 5px;
+  border: none;
   font-family: Roboto;
   font-size: 16px;
   font-weight: bold;
